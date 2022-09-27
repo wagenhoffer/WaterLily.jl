@@ -22,6 +22,6 @@ end
 using BenchmarkTools
 test() = @benchmark sim_step!(sim,π/4,remeasure=true) setup=(sim=block())
 
-# include("TwoD_plots.jl")
+include("TwoD_plots.jl")
 # sim_gif!(block();duration=4π,step=π/16,remeasure=true)
-# sim_gif!(block(amp=π/4);duration=8π,step=π/16,remeasure=true,μbody=true,cfill=:Blues,legend=false,border=:none)
+sim_gif!(block(amp=π/4);duration=8π,step=π/16,remeasure=true,μbody=true,cfill=:Blues,legend=false,border=:none)
