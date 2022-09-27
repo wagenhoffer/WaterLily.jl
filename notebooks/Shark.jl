@@ -14,7 +14,7 @@ macro bind(def, element)
 end
 
 # ╔═╡ c028100e-f47b-11eb-2547-df779889e265
-using WaterLily, StaticArrays, PlutoUI, Interpolations, Plots, Images
+using WaterLily, StaticArrays, Interpolations, Plots, Images
 
 # ╔═╡ b0c8df66-1e63-456e-be32-d469e6972e00
 md"""
@@ -68,7 +68,7 @@ The bottom view shows the outline we're interested in, and adding a few points a
 
 # ╔═╡ 71c9bc8f-921d-4df4-acc2-7321ce6648e0
 begin
-	plot(dogfish)
+	# plot(dogfish)
 	nose,len = (30,224),500
 	width = [0.02,0.07,0.06,0.048,0.03,0.019,0.01]
 	scatter!(nose[1].+len.*range(0,1,length=length(width)), 

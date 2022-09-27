@@ -2,8 +2,10 @@ using WaterLily
 using LinearAlgebra: norm2
 include("TwoD_plots.jl")
 
-function TwoD_julia_video(;p=6,Re=250,stop=60.)
+# function TwoD_julia_video(;p=6,Re=250,stop=60.)
     # Set simulation size & physical parameters
+    p = 6
+    Re = 250
     n,m = 2^p,2^p
     U,R,r = [0.,-1.], m/16, m/16/0.75
     ν=norm2(U)*R/Re
@@ -23,7 +25,7 @@ function TwoD_julia_video(;p=6,Re=250,stop=60.)
     sim = Simulation((n+2,m+2),U,R;ν,body)
 
     # Solve flow and make nice gif
-    t = range(0.,stop;step=0.3)
+    t = range(0.,15;step=0.3)
     gr(show = false, size=(700,600))
     @time @gif for tᵢ in t
         println("tU/L=",round(tᵢ,digits=4))
@@ -36,4 +38,4 @@ function TwoD_julia_video(;p=6,Re=250,stop=60.)
         end
     end
     return sim
-end
+# end
